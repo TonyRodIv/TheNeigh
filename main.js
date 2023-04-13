@@ -71,6 +71,8 @@ function music1(){
   album.innerHTML = 'Hard To Imagine The Neighbourhood <br> Ever Changing'
   music.src = "./src/10 The Neighbourhood - Reflections.mp3"
   music.play() 
+  playBtn.style.display = "none";
+  pauseBtn.style.display = "block";
 }
 function music2(){
   cardMusic.style.display = 'flex'
@@ -79,6 +81,8 @@ function music2(){
   albumPhoto.src = "./img/daddyIssues (1).png"
   music.src = "./src/The Neighbourhood - Daddy Issues (Remix).mp3"
   music.play()  
+  playBtn.style.display = "none";
+  pauseBtn.style.display = "block";
 }
 function music3(){
   cardMusic.style.display = 'flex'
@@ -87,6 +91,8 @@ function music3(){
   album.innerHTML = 'Hard To Imagine The Neighbourhood <br> Ever Changing'
   music.src = "./src/05 The Neighbourhood - Softcore.mp3"
   music.play() 
+  playBtn.style.display = "none";
+  pauseBtn.style.display = "block";
 }
 function music4(){
   cardMusic.style.display = 'flex'
@@ -95,5 +101,7 @@ function music4(){
   albumPhoto.src = "./img/HTITNEC-capa.png"
   music.src = "./src/09 The Neighbourhood - You Get Me So High.mp3"
   music.play() 
+  playBtn.style.display = "none";
+  pauseBtn.style.display = "block";
 }
 
