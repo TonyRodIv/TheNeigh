@@ -44,7 +44,7 @@
         text-align: justify;
     }
 
-    .musicVideo {
+    .musicas,.videos {
         padding-left: 10px;
     }
 
@@ -79,7 +79,7 @@
         width: 676px;
     }
 
-    .musicVideo {
+    .musicas,.videos {
         padding-left: 10%;
     }
 
@@ -114,7 +114,7 @@
         width: 760px;
     }
 
-    .musicVideo {
+    .musicas,.videos {
         padding-left: 10%;
     }
 }
@@ -175,8 +175,13 @@ button {
     display: flex;
     align-items: center;
     text-align: center;
+    cursor: pointer;
 
     color: rgba(255, 255, 255, 0.7);
+
+}
+.navTitle:hover {
+    color: rgb(255, 255, 255);
 
 }
 
@@ -281,9 +286,11 @@ button {
     color: #FFFFFF;
 }
 
-.musicas,
-.videos {
+.musicas{
     height: 200px;
+}
+.videos{
+    height: 350px;
 }
 
 .carrossel {
@@ -410,6 +417,13 @@ button {
     height: 6px;
     background: #A5A5A5;
     border-radius: 20px;
+}
+footer{
+    background-color: #0C0C0C;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* .videoPlayer {
