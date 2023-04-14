@@ -44,7 +44,8 @@
         text-align: justify;
     }
 
-    .musicas,.videos {
+    .musicas,
+    .videos {
         padding-left: 10px;
     }
 
@@ -60,14 +61,20 @@
         align-items: center;
         gap: 20px;
     }
+
     @keyframes slideInFrom {
         0% {
-          transform: translateY(100%);
+            transform: translateY(100%);
         }
+
         100% {
-          transform: translateY(0);
+            transform: translateY(0);
         }
-      }
+    }
+
+    .cardVideoPlayer {
+        width: 95%;
+    }
 }
 
 @media screen and (min-width: 700px) {
@@ -87,7 +94,8 @@
         width: 676px;
     }
 
-    .musicas,.videos {
+    .musicas,
+    .videos {
         padding-left: 10%;
     }
 
@@ -103,14 +111,20 @@
         border: 0.5px solid #4E4E4E;
         border-radius: 20px 0px 0px 20px;
     }
+
     @keyframes slideInFrom {
         0% {
-          transform: translateX(100%);
+            transform: translateX(100%);
         }
+
         100% {
-          transform: translateX(0);
+            transform: translateX(0);
         }
-      }
+    }
+
+    .cardVideoPlayer {
+        width: 600px;
+    }
 }
 
 @media screen and (min-width: 1501px) {
@@ -130,7 +144,8 @@
         width: 760px;
     }
 
-    .musicas,.videos {
+    .musicas,
+    .videos {
         padding-left: 10%;
     }
 }
@@ -140,9 +155,11 @@ body {
     color: #fff;
     /* overflow: hidden; */
 }
-a{
+
+a {
     color: #fff;
 }
+
 main {
     display: flex;
     flex-direction: column;
@@ -196,6 +213,7 @@ button {
     color: rgba(255, 255, 255, 0.7);
 
 }
+
 .navTitle:hover {
     color: rgb(255, 255, 255);
 
@@ -302,10 +320,11 @@ button {
     color: #FFFFFF;
 }
 
-.musicas{
+.musicas {
     height: 200px;
 }
-.videos{
+
+.videos {
     height: 350px;
 }
 
@@ -335,6 +354,7 @@ button {
     justify-content: center;
     gap: 20px;
 }
+
 .card1:hover,
 .card2:hover,
 .card3:hover,
@@ -370,7 +390,9 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
+    cursor: pointer;
 }
+
 .cardV1:hover,
 .cardV2:hover,
 .cardV3:hover,
@@ -435,7 +457,8 @@ button {
     background: #A5A5A5;
     border-radius: 20px;
 }
-footer{
+
+footer {
     background-color: #0C0C0C;
     height: 3rem;
     display: flex;
@@ -443,21 +466,51 @@ footer{
     align-items: center;
 }
 
-/* .videoPlayer {
+.videoPlayer {
     position: absolute;
     width: 100%;
     height: 100vh;
-    background: rgba(16, 16, 16, 0.5);
-    backdrop-filter: blur(40px);
-    display: flex;
+    /* background: rgba(16, 16, 16, 0.5);
+    backdrop-filter: blur(40px); */
+    display: none;
     justify-content: center;
     align-items: center;
 }
 
+iframe {
+    width: 99%;
+    height: 300px;
+    margin: 2.5px 1%;
+    border-radius: 25px;
+    border: 1px solid #4B4B4B;
+}
+
 .cardVideoPlayer {
-    width: 50%;
-    height: 70vh;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 400px;
     background: #1E1E1E;
     border: 1px solid #4B4B4B;
     border-radius: 25px;
-} */
+    box-shadow: -6px -7px 400px 20000px rgba(0, 0, 0, 0.90);
+    -webkit-box-shadow: -6px -7px 400px 20000px rgba(0, 0, 0, 0.90);
+    -moz-box-shadow: -6px -7px 400px 20000px rgba(0, 0, 0, 0.90);
+    animation: slideInFromBottom 0.5s ease-out;
+}
+
+.exitModal {
+    margin: 20px;
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}

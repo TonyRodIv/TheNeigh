@@ -10,7 +10,7 @@
     <title>The Neighbourhood</title>
 </head>
 
-<body>
+<body id="body">
     <div class="container">
         <main>
             <nav class="navbar">
@@ -99,6 +99,17 @@
                 </div>
             </div>
             <section class="musicVideo">
+                <article class="videoPlayer" id="videoPlayer">
+                    <div class="cardVideoPlayer">
+                        <iframe width="560" height="315" src="" id="video"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                        <button class="btnListen exitModal" onclick="exitModal()">
+                            <p><strong>Clique para voltar</strong> </p>
+                        </button>
+                    </div>
+                </article>
                 <section class="musicas">
                     <p class="headTitle">Músicas <span class="tituloLegenda">MAIS OUVIDAS</span></p>
                     <div class="carrossel">
@@ -140,38 +151,38 @@
                 <section class="videos">
                     <p class="headTitle">Vídeos <span class="tituloLegenda">MAIS REPRODUZIDOS</span></p>
                     <div class="carrossel">
-                        <a href="https://youtu.be/GCdwKhTtNNw" target="_blank" class="cardV1">
+                        <div class="cardV1" onclick="video1()">
                             <img src="./img/sweaterWeather.png" alt="">
                             <div class="actionBar">
                                 <p class="tituloCard">Sweater Weather</p>
                                 <p class="paragrafoCard">I Love You.</p>
                                 <img src="./img/heart.svg" alt="">
                             </div>
-                        </a>
-                        <a href="https://youtu.be/_lMlsPQJs6U" target="_blank" class="cardV2">
+                        </div>
+                        <div class="cardV2" onclick="video2()">
                             <img src="./img/daddyIssuesVideo.png" alt="">
                             <div class="actionBar">
                                 <p class="tituloCard">Daddy Issues</p>
                                 <p class="paragrafoCard">Wiped Out!</p>
                                 <img src="./img/heart.svg" alt="">
                             </div>
-                        </a>
-                        <a href="https://youtu.be/8giBPUpzKRw" target="_blank" class="cardV3">
+                        </div>
+                        <div class="cardV3" onclick="video3()">
                             <img src="./img/stargazingVideo.png" alt="">
                             <div class="actionBar">
                                 <p class="tituloCard">Stargazing</p>
                                 <p class="paragrafoCard">Clip Chrome & <br> The Mono-Tones</p>
                                 <img src="./img/heart.svg" alt="">
                             </div>
-                        </a>
-                        <a href="https://youtu.be/Jir-WItz1OI" target="_blank" class="cardV4">
+                        </div>
+                        <div class="cardV4" onclick="video4()">
                             <img src="./img//prettyBoy.png" alt="">
                             <div class="actionBar">
                                 <p class="tituloCard">Pretty Boy</p>
                                 <p class="paragrafoCard">Clip Chrome & <br> The Mono-Tones</p>
                                 <img src="./img/heart.svg" alt="">
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </section>
                 <footer>

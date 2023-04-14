@@ -17,6 +17,10 @@ const pauseBtn = document.getElementById("pauseBtn");
 const progressBar = document.getElementById("progressBar");
 const progressContainer = document.getElementById("progressContainer");
 
+const videoPlayer = document.getElementById('videoPlayer')
+const video = document.getElementById('video')
+const body = document.getElementById('body')
+
 window.addEventListener('scroll', function () {
   var navbar = document.querySelector('.navbar');
   navbar.classList.toggle('change', window.scrollY > 10);
@@ -103,5 +107,37 @@ function music4(){
   music.play() 
   playBtn.style.display = "none";
   pauseBtn.style.display = "block";
+}
+
+//MUDAR VIDEO MODAL
+
+function exitModal(){
+  videoPlayer.style.display = 'none'
+  body.style.overflow = 'auto'
+}
+
+function video1(){
+  cardMusic.style.display = 'none'
+  videoPlayer.style.display = 'flex'
+  body.style.overflow = 'hidden'
+  video.src = 'https://www.youtube.com/embed/GCdwKhTtNNw'
+}
+function video2(){
+  cardMusic.style.display = 'none'
+  videoPlayer.style.display = 'flex'
+  body.style.overflow = 'hidden'
+  video.src = 'https://www.youtube.com/embed/_lMlsPQJs6U'
+}
+function video3(){
+  cardMusic.style.display = 'none'
+  videoPlayer.style.display = 'flex'
+  body.style.overflow = 'hidden'
+  video.src = 'https://www.youtube.com/embed/8giBPUpzKRw'
+}
+function video4(){
+  cardMusic.style.display = 'none'
+  videoPlayer.style.display = 'flex'
+  body.style.overflow = 'hidden'
+  video.src = 'https://www.youtube.com/embed/Jir-WItz1OI'
 }
 
