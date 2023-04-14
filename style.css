@@ -60,6 +60,14 @@
         align-items: center;
         gap: 20px;
     }
+    @keyframes slideInFrom {
+        0% {
+          transform: translateY(100%);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
 }
 
 @media screen and (min-width: 700px) {
@@ -95,6 +103,14 @@
         border: 0.5px solid #4E4E4E;
         border-radius: 20px 0px 0px 20px;
     }
+    @keyframes slideInFrom {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
 }
 
 @media screen and (min-width: 1501px) {
@@ -376,6 +392,7 @@ button {
     display: none;
     flex-direction: column;
     justify-content: space-around;
+    animation: slideInFrom 0.5s ease-out;
 }
 
 .photoMusic {
@@ -427,7 +444,6 @@ footer{
 }
 
 /* .videoPlayer {
-
     position: absolute;
     width: 100%;
     height: 100vh;
