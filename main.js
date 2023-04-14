@@ -113,30 +113,33 @@ function music4(){
 
 function exitModal(){
   videoPlayer.style.display = 'none'
-  music.pause();
   body.style.overflow = 'auto'
   video.src = '##'
 }
 
 function video1(){
+  music.pause();
   cardMusic.style.display = 'none'
   videoPlayer.style.display = 'flex'
   body.style.overflow = 'hidden'
   video.src = 'https://www.youtube.com/embed/GCdwKhTtNNw'
 }
 function video2(){
+  music.pause();
   cardMusic.style.display = 'none'
   videoPlayer.style.display = 'flex'
   body.style.overflow = 'hidden'
   video.src = 'https://www.youtube.com/embed/_lMlsPQJs6U'
 }
 function video3(){
+  music.pause();
   cardMusic.style.display = 'none'
   videoPlayer.style.display = 'flex'
   body.style.overflow = 'hidden'
   video.src = 'https://www.youtube.com/embed/8giBPUpzKRw'
 }
 function video4(){
+  music.pause();
   cardMusic.style.display = 'none'
   videoPlayer.style.display = 'flex'
   body.style.overflow = 'hidden'
