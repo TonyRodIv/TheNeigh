@@ -113,8 +113,9 @@ function music4(){
 
 function exitModal(){
   videoPlayer.style.display = 'none'
+  music.pause();
   body.style.overflow = 'auto'
-  video.src = ' '
+  video.src = '##'
 }
 
 function video1(){
