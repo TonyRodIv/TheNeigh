@@ -117,7 +117,11 @@ function exitModal(){
   video.src = '##'
 }
 
+
 function video1(){
+
+  window.scrollTo(0, document.body.scrollHeight);
+
   music.pause();
   cardMusic.style.display = 'none'
   videoPlayer.style.display = 'flex'
@@ -125,6 +129,7 @@ function video1(){
   video.src = 'https://www.youtube.com/embed/GCdwKhTtNNw'
 }
 function video2(){
+  window.scrollTo(0, document.body.scrollHeight);
   music.pause();
   cardMusic.style.display = 'none'
   videoPlayer.style.display = 'flex'
@@ -132,6 +137,7 @@ function video2(){
   video.src = 'https://www.youtube.com/embed/_lMlsPQJs6U'
 }
 function video3(){
+  window.scrollTo(0, document.body.scrollHeight);
   music.pause();
   cardMusic.style.display = 'none'
   videoPlayer.style.display = 'flex'
@@ -139,6 +145,7 @@ function video3(){
   video.src = 'https://www.youtube.com/embed/8giBPUpzKRw'
 }
 function video4(){
+  window.scrollTo(0, document.body.scrollHeight);
   music.pause();
   cardMusic.style.display = 'none'
   videoPlayer.style.display = 'flex'
