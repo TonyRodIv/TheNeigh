@@ -1,155 +1,231 @@
+ // --- DADOS COM IMAGENS LOCAIS DA BANDA ---
+        const musicData = [
+            {
+                title: "Reflections",
+                album: "Hard To Imagine...",
+                src: "./src/10 The Neighbourhood - Reflections.mp3",
+                cover: "./img/HTITNEC-capa.png"
+            },
+            {
+                title: "Daddy Issues (Remix)",
+                album: "Wiped Out!",
+                src: "./src/The Neighbourhood - Daddy Issues (Remix).mp3",
+                cover: "./img/daddyIssues (1).png"
+            },
+            {
+                title: "Softcore",
+                album: "Hard To Imagine...",
+                src: "./src/05 The Neighbourhood - Softcore.mp3",
+                cover: "./img/HTITNEC-capa.png"
+            },
+            {
+                title: "You Get Me So High",
+                album: "Hard To Imagine...",
+                src: "./src/09 The Neighbourhood - You Get Me So High.mp3",
+                cover: "./img/HTITNEC-capa.png"
+            }
+        ];
 
-const about = document.getElementById('about');
-const fullText = document.getElementById('fullText');
-const smallText = document.getElementById('smallText');
+        const videoData = [
+            { title: "Sweater Weather", album: "I Love You.", img: "./img/sweaterWeather.png", link: "https://www.youtube.com/embed/GCdwKhTtNNw" },
+            { title: "Daddy Issues", album: "Wiped Out!", img: "./img/daddyIssuesVideo.png", link: "https://www.youtube.com/embed/_lMlsPQJs6U" },
+            { title: "Stargazing", album: "Chip Chrome", img: "./img/stargazingVideo.png", link: "https://www.youtube.com/embed/8giBPUpzKRw" },
+            { title: "Pretty Boy", album: "Chip Chrome", img: "./img/prettyBoy.png", link: "https://www.youtube.com/embed/Jir-WItz1OI" }
+        ];
 
-const music = document.getElementById("music");
-const cardMusic = document.getElementById("cardMusic");
+        // --- ELEMENTOS DO DOM ---
+        const audio = document.getElementById('audioPlayer');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const iconPlay = document.getElementById('iconPlay');
+        const iconPause = document.getElementById('iconPause');
+        const progressBar = document.getElementById('progressBar');
+        const progressContainer = document.getElementById('progressContainer');
+        const currTimeEl = document.getElementById('currTime');
+        const durTimeEl = document.getElementById('durTime');
+        const playerBar = document.getElementById('playerBar');
+        const pTitle = document.getElementById('p-title');
+        const pAlbum = document.getElementById('p-album');
+        const pCover = document.getElementById('p-cover');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const volSlider = document.getElementById('volSlider');
 
-const albumPhoto = document.getElementById('albumPhoto')
-const album = document.getElementById('album')
-const musicName = document.getElementById('musicName')
-const currentMusic = document.getElementById('currentMusic')
+        let currentSongIndex = 0;
+        let isPlaying = false;
 
-const playBtn = document.getElementById("playBtn");
-const pauseBtn = document.getElementById("pauseBtn");
+        // --- INICIALIZAÇÃO ---
+        function init() {
+            renderMusicList();
+            renderVideoList();
+            
+            window.addEventListener('scroll', () => {
+                const nav = document.getElementById('navbar');
+                if(window.scrollY > 50) nav.classList.add('scrolled');
+                else nav.classList.remove('scrolled');
+            });
+        }
 
-const progressBar = document.getElementById("progressBar");
-const progressContainer = document.getElementById("progressContainer");
+        // --- RENDERIZAÇÃO ---
+        function renderMusicList() {
+            const container = document.querySelector('.section .media-scroller');
+            container.innerHTML = musicData.map((song, index) => `
+                <div class="media-card music-card-horizontal" onclick="loadAndPlay(${index})">
+                    <div style="position: relative; min-width: 100px;">
+                        <img src="${song.cover}" alt="${song.title}">
+                        <div class="play-overlay">
+                             <div class="play-icon-circle">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <div class="card-title">${song.title}</div>
+                        <div class="card-album">${song.album}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
 
-const videoPlayer = document.getElementById('videoPlayer')
-const video = document.getElementById('video')
-const body = document.getElementById('body')
+        function renderVideoList() {
+            const container = document.getElementById('video-scroller');
+            container.innerHTML = videoData.map((video) => `
+                <div class="media-card" onclick="openVideo('${video.link}', '${video.title}')" style="grid-auto-columns: 400px;">
+                    <div style="position:relative; height: 220px;">
+                        <img src="${video.img}" class="card-image" alt="${video.title}">
+                        <div class="play-overlay">
+                             <div class="play-icon-circle">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg>
+                             </div>
+                        </div>
+                    </div>
+                    <div style="padding: 20px;">
+                        <div class="card-title">${video.title}</div>
+                        <div class="card-album">${video.album}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
 
-window.addEventListener('scroll', function () {
-  var navbar = document.querySelector('.navbar');
-  navbar.classList.toggle('change', window.scrollY > 10);
-});
+        // --- PLAYER LOGIC ---
+        function loadAndPlay(index) {
+            currentSongIndex = index;
+            const song = musicData[index];
+            
+            pTitle.innerText = song.title;
+            pAlbum.innerText = song.album;
+            pCover.src = song.cover;
+            playerBar.classList.add('active');
+            
+            audio.src = song.src;
+            playTrack();
+        }
 
-function moreText() {
-  smallText.style.display = 'none'
-  fullText.style.display = 'block'
-  about.style.background = 'linear-gradient(180deg, rgba(12, 12, 12, 0.8) 0%, rgb(12, 12, 12) 90%)'
-}
-function lessText() {
-  smallText.style.display = 'block'
-  fullText.style.display = 'none'
-  about.style.background = 'linear-gradient(180deg, rgba(12, 12, 12, 0.5) 20%, rgb(12, 12, 12) 90%)'
-}
+        function playTrack() {
+            audio.play().catch(e => console.log("Interação necessária primeiro"));
+            isPlaying = true;
+            updatePlayBtn();
+        }
 
-// PLAYER DE MÚSICA
-playBtn.addEventListener("click", () => {
-  music.play();
-  playBtn.style.display = "none";
-  pauseBtn.style.display = "block";
-});
+        function pauseTrack() {
+            audio.pause();
+            isPlaying = false;
+            updatePlayBtn();
+        }
 
-pauseBtn.addEventListener("click", () => {
-  music.pause();
-  playBtn.style.display = "block";
-  pauseBtn.style.display = "none";
-});
+        function togglePlay() {
+            if(audio.src) {
+                isPlaying ? pauseTrack() : playTrack();
+            }
+        }
 
+        function updatePlayBtn() {
+            if(isPlaying) {
+                iconPlay.style.display = 'none';
+                iconPause.style.display = 'block';
+            } else {
+                iconPlay.style.display = 'block';
+                iconPause.style.display = 'none';
+            }
+        }
 
-music.addEventListener("timeupdate", () => {
-  const progress = (music.currentTime / music.duration) * 100;
-  progressBar.style.width = `${progress}%`;
-});
+        function prevTrack() {
+            currentSongIndex--;
+            if (currentSongIndex < 0) currentSongIndex = musicData.length - 1;
+            loadAndPlay(currentSongIndex);
+        }
 
-music.addEventListener("timeupdate", () => {
-  const progress = (music.currentTime / music.duration) * 100;
-  progressBar.style.width = `${progress}%`;
-});
+        function nextTrack() {
+            currentSongIndex++;
+            if (currentSongIndex > musicData.length - 1) currentSongIndex = 0;
+            loadAndPlay(currentSongIndex);
+        }
 
-progressContainer.addEventListener("click", (e) => {
-  const progress = (e.offsetX / progressContainer.offsetWidth) * music.duration;
-  music.currentTime = progress;
-});
+        audio.addEventListener('timeupdate', (e) => {
+            const { duration, currentTime } = e.srcElement;
+            if(isNaN(duration)) return;
+            
+            const progressPercent = (currentTime / duration) * 100;
+            progressBar.style.width = `${progressPercent}%`;
+            
+            currTimeEl.innerText = formatTime(currentTime);
+            durTimeEl.innerText = formatTime(duration);
+        });
 
-// MUDAR INFORMAÇÕES DA MÚSICA
+        progressContainer.addEventListener('click', (e) => {
+            const width = progressContainer.clientWidth;
+            const clickX = e.offsetX;
+            const duration = audio.duration;
+            audio.currentTime = (clickX / width) * duration;
+        });
 
-function music1(){
-  cardMusic.style.display = 'flex'
-  musicName.innerHTML = 'Reflections'
-  albumPhoto.src = "./img/HTITNEC-capa.png"
-  album.innerHTML = 'Hard To Imagine The Neighbourhood <br> Ever Changing'
-  music.src = "./src/10 The Neighbourhood - Reflections.mp3"
-  music.play() 
-  playBtn.style.display = "none";
-  pauseBtn.style.display = "block";
-}
-function music2(){
-  cardMusic.style.display = 'flex'
-  musicName.innerHTML = 'Daddy Issues <span class="paragrafoCard">Remix</span>'
-  album.innerHTML = 'Daddy Issues Remix'
-  albumPhoto.src = "./img/daddyIssues (1).png"
-  music.src = "./src/The Neighbourhood - Daddy Issues (Remix).mp3"
-  music.play()  
-  playBtn.style.display = "none";
-  pauseBtn.style.display = "block";
-}
-function music3(){
-  cardMusic.style.display = 'flex'
-  musicName.innerHTML = 'Softcore'
-  albumPhoto.src = "./img/HTITNEC-capa.png"
-  album.innerHTML = 'Hard To Imagine The Neighbourhood <br> Ever Changing'
-  music.src = "./src/05 The Neighbourhood - Softcore.mp3"
-  music.play() 
-  playBtn.style.display = "none";
-  pauseBtn.style.display = "block";
-}
-function music4(){
-  cardMusic.style.display = 'flex'
-  musicName.innerHTML = 'You Get Me So High'
-  album.innerHTML = 'Hard To Imagine The Neighbourhood <br> Ever Changing'
-  albumPhoto.src = "./img/HTITNEC-capa.png"
-  music.src = "./src/09 The Neighbourhood - You Get Me So High.mp3"
-  music.play() 
-  playBtn.style.display = "none";
-  pauseBtn.style.display = "block";
-}
+        audio.addEventListener('ended', nextTrack);
 
-//MUDAR VIDEO MODAL
+        function formatTime(time) {
+            const min = Math.floor(time / 60);
+            let sec = Math.floor(time % 60);
+            if (sec < 10) sec = `0${sec}`;
+            return `${min}:${sec}`;
+        }
 
-function exitModal(){
-  videoPlayer.style.display = 'none'
-  body.style.overflow = 'auto'
-  video.src = '##'
-}
+        volSlider.addEventListener('input', (e) => {
+            audio.volume = e.target.value;
+        });
 
+        playPauseBtn.addEventListener('click', togglePlay);
+        prevBtn.addEventListener('click', prevTrack);
+        nextBtn.addEventListener('click', nextTrack);
 
-function video1(){
+        // --- UI ACTIONS ---
+        function toggleBio(e) {
+            if(e) e.preventDefault();
+            const bio = document.getElementById('biography');
+            const btn = document.querySelector('.btn-toggle-text');
+            bio.classList.toggle('expanded');
+            btn.innerText = bio.classList.contains('expanded') ? 'Ler menos' : 'Ler biografia completa';
+        }
 
-  window.scrollTo(0, document.body.scrollHeight);
+        // --- VIDEO MODAL LOGIC ---
+        const videoModal = document.getElementById('videoModal');
+        const videoFrame = document.getElementById('videoFrame');
+        const modalTitle = document.getElementById('modalTitle');
 
-  music.pause();
-  cardMusic.style.display = 'none'
-  videoPlayer.style.display = 'flex'
-  body.style.overflow = 'hidden'
-  video.src = 'https://www.youtube.com/embed/GCdwKhTtNNw'
-}
-function video2(){
-  window.scrollTo(0, document.body.scrollHeight);
-  music.pause();
-  cardMusic.style.display = 'none'
-  videoPlayer.style.display = 'flex'
-  body.style.overflow = 'hidden'
-  video.src = 'https://www.youtube.com/embed/_lMlsPQJs6U'
-}
-function video3(){
-  window.scrollTo(0, document.body.scrollHeight);
-  music.pause();
-  cardMusic.style.display = 'none'
-  videoPlayer.style.display = 'flex'
-  body.style.overflow = 'hidden'
-  video.src = 'https://www.youtube.com/embed/8giBPUpzKRw'
-}
-function video4(){
-  window.scrollTo(0, document.body.scrollHeight);
-  music.pause();
-  cardMusic.style.display = 'none'
-  videoPlayer.style.display = 'flex'
-  body.style.overflow = 'hidden'
-  video.src = 'https://www.youtube.com/embed/Jir-WItz1OI'
-}
+        function openVideo(link, title) {
+            if(isPlaying) pauseTrack();
+            
+            videoFrame.src = link + "?autoplay=1"; 
+            modalTitle.innerText = title;
+            videoModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
 
+        function closeVideo() {
+            videoModal.classList.remove('active');
+            videoFrame.src = "";
+            document.body.style.overflow = 'auto';
+        }
+
+        videoModal.addEventListener('click', (e) => {
+            if(e.target === videoModal) closeVideo();
+        });
+
+        init();

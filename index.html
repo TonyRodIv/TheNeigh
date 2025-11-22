@@ -1,200 +1,124 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./img/iconTheNeigh.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <title>The Neighbourhood</title>
+    <title>The Neighbourhood | Experience</title>
+    
 </head>
+<body>
 
-<body id="body">
-    <div class="container">
-        <main>
-            <nav class="navbar">
-                <a href="../index.html">
-                    <img src="./img/iconTheNeigh.png" class="homeIcon" alt="" srcset="">
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-logo">The Neighbourhood</div>
+        <div class="nav-user">
+            <img src="./img/Pfp.svg" alt="User">
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Hard To Imagine The Neighbourhood Ever Changing</h1>
+            <div class="hero-desc" id="biography">
+                The Neighbourhood é uma banda americana de indie rock formada em Newbury Park, Califórnia em 2011. 
+                Conhecidos por sua estética preto e branco monocromática e mistura atmosférica de rock, hip-hop, pop e R&B.
+                O grupo alcançou fama global com o hit "Sweater Weather".
+            </div>
+            
+            <div class="social-links">
+                <a href="https://open.spotify.com/artist/77SW9BnxLY8rJ0RciFqkHh" target="_blank" class="social-btn" title="Spotify">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.24c-.6.18-1.2-.12-1.38-.72-.18-.6.12-1.2.72-1.38 4.2-1.2 11.28-.84 15.72 1.8.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
                 </a>
-                <p class="navTitle">The Neighbourhood</p>
-                <img src="./img/Pfp.svg" class="pfp" alt="">
-            </nav>
-            <header>
-                <section class="about" id="about">
-                    <div class="texts">
-                        <div>
-                            <p class="headTitle">The Neighbourhood</p>
-                            <p class="headP" id="smallText">The Neighbourhood é uma banda americana de indie rock
-                                formada em Newbury Park, Califórnia em
-                                2011. A banda é composta pelo vocalista Jesse Rutherford, os guitarristas Jeremy
-                                Freedman e
-                                Zach... <br>
-                                <span class="more" onclick="moreText()">
-                                    MAIS
-                                </span>
-                            </p>
-                            <p class="headP headPMenos" id="fullText">The Neighbourhood é uma banda americana de indie
-                                rock formada em Newbury Park, Califórnia em 2011. A banda é composta pelo vocalista
-                                Jesse Rutherford, os guitarristas Jeremy Freedman e Zach Abels, e o baixista Mikey
-                                Margott.
-                                Depois de lançar três EPs, <strong> I'm Sorry..., The Love Collection e Thank
-                                    You</strong>, eles lançaram seu primeiro álbum completo, <strong>I Love
-                                    You</strong>, em 23 de abril de 2013, pela Columbia Records. Em novembro de 2014,
-                                eles lançaram uma mixtape intitulada <strong>#000000 & #FFFFFF.</strong> O segundo álbum
-                                da banda, <strong>Wiped Out!</strong> foi lançado em 30 de outubro de 2015, tendo como
-                                cargo chefe a canção <strong> "R. I. P. 2 My Youth ".</strong>
-                                Em setembro de 2017, foi lançado o extended <strong>play Hard</strong>, com cinco faixas
-                                inéditas. Em janeiro de 2018 foi lançado o EP <strong>To Imagine</strong> com mais cinco
-                                músicas inéditas, conectando os dois EPs juntos no dia 24 de janeiro de 2018, eles
-                                lançaram um video intitulado <strong>"Hard to Imagine"</strong>, com músicas de ambos os
-                                EPs.
-                                O terceiro álbum da banda de nome homônimo <strong>The Neighbourhood</strong> foi
-                                lançado em 9 de março de 2018 incluindo algumas músicas lançadas nos EPs <strong>Hard e
-                                    To Imagine</strong> meses antes.<br>
-                                <span class="more" onclick="lessText()">
-                                    MENOS
-                                </span>
-                            </p>
+                <a href="https://music.apple.com/br/artist/the-neighbourhood/219350813" target="_blank" class="social-btn" title="Apple Music">
+                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.547 14.192c-.017-2.676 2.181-3.963 2.281-4.026-1.247-1.823-3.187-2.072-3.876-2.102-1.635-.167-3.19.962-4.019.962-.827 0-2.111-.94-3.468-.915-1.785.027-3.435 1.04-4.34 2.642-1.853 3.211-.474 7.923 1.331 10.528.884 1.276 1.935 2.709 3.317 2.658 1.328-.053 1.83-.86 3.435-.86 1.598 0 2.055.86 3.45.834 1.439-.026 2.351-1.303 3.234-2.607 1.017-1.49 1.435-2.933 1.452-3.008-.032-.014-2.779-1.067-2.8-4.104zm-3.016-8.64c.721-.874 1.209-2.09 1.076-3.303-1.041.042-2.302.693-3.05 1.567-.648.747-1.215 1.953-1.062 3.133 1.162.091 2.351-.586 3.036-1.397z"/></svg>
+                </a>
+            </div>
+        </div>
+    </header>
 
-                        </div>
-                        <button class="btnListen">
-                            <p class="ouvir">OUVIR</p>
-                            <div class="streamings">
-                                <a href="https://open.spotify.com/artist/77SW9BnxLY8rJ0RciFqkHh?autoplay=true"
-                                    target="_blank" class="musicAppIco">
-                                    <img src="./img/spotify.svg" alt="">
-                                </a>
-                                <a href="https://music.apple.com/br/artist/the-neighbourhood/219350813" target="_blank"
-                                    class="musicAppIco">
-                                    <img src="./img/appleMusic.svg" alt="">
-                                </a>
-                                <a href="https://music.youtube.com/channel/UC1cnYMXqKdazz-gDPKaDFyg?feature=gws_kp_artist&feature=gws_kp_artist"
-                                    target="_blank" class="musicAppIco">
-                                    <img src="./img/ytMusic.svg" alt="">
-                                </a>
-                            </div>
-                        </button>
-                    </div>
-                </section>
-            </header>
-            <article class="cardMusic" id="cardMusic">
-                <div class="photoMusic">
-                    <img src="./" alt="" id="albumPhoto">
-                    <div class="textsCard">
-                        <p class="tituloCard" id="musicName">NOME</p>
-                        <p class="paragrafoCard" id="album">ALBUM</p>
-                        <audio id="music">
-                            <source src="" id="currentMusic" type="audio/mpeg" />
-                        </audio>
-                        <div class="player">
-                            <button id="playBtn"><img src="./img/play.svg" alt=""></button>
-                            <button id="pauseBtn"><img src="./img/pause.svg" alt=""></button>
-                            <div id="progressContainer">
-                                <div id="progressBar"></div>
-                            </div>
-                            <img src="./img/heart.svg" alt="">
-                        </div>
-                    </div>
+    <!-- MUSIC SECTION -->
+    <section class="section">
+        <div class="section-header">
+            <span class="section-subtitle">DISCOGRAFIA SELECIONADA</span>
+            <h2 class="section-title">Músicas Populares</h2>
+        </div>
+        <div class="media-scroller">
+            <!-- Cards gerados via JS -->
+        </div>
+    </section>
+
+    <!-- VIDEOS SECTION -->
+    <section class="section">
+        <div class="section-header">
+            <span class="section-subtitle">EXPERIÊNCIA VISUAL</span>
+            <h2 class="section-title">Videoclipes Oficiais</h2>
+        </div>
+        <div class="media-scroller" id="video-scroller">
+             <!-- Cards gerados via JS -->
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="text-align: center; padding: 2rem; color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 80px; border-top: 1px solid #222;">
+        <p style="opacity: 0.6">The Neighbourhood Experience Project</p>
+        <p style="margin-top: 10px;">&copy; 2023 Todos os direitos reservados à banda.</p>
+    </footer>
+
+    <!-- PLAYER BAR (FIXED) -->
+    <div class="player-bar" id="playerBar">
+        <div class="player-info">
+            <img src="" alt="Album Art" class="player-thumb" id="p-cover">
+            <div class="player-text">
+                <h4 id="p-title">Selecione uma música</h4>
+                <p id="p-album">--</p>
+            </div>
+        </div>
+
+        <div class="player-controls">
+            <div class="control-buttons">
+                <button class="btn-control" id="prevBtn" title="Anterior">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="19 20 9 12 19 4 19 20"></polygon><line x1="5" y1="19" x2="5" y2="5"></line></svg>
+                </button>
+                <button class="btn-play" id="playPauseBtn" title="Play/Pause">
+                    <svg id="iconPlay" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                    <svg id="iconPause" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+                </button>
+                <button class="btn-control" id="nextBtn" title="Próximo">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 4 15 12 5 20 5 4"></polygon><line x1="19" y1="5" x2="19" y2="19"></line></svg>
+                </button>
+            </div>
+            <div class="progress-area">
+                <span id="currTime">0:00</span>
+                <div class="progress-bar-bg" id="progressContainer">
+                    <div class="progress-bar-fill" id="progressBar"></div>
                 </div>
-            </article>
-            <section class="musicVideo">
-                <article class="videoPlayer" id="videoPlayer">
-                    <div class="cardVideoPlayer">
-                        <iframe width="560" height="315" src="" id="video"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen></iframe>
-                        <button class="btnListen exitModal" onclick="exitModal()">
-                            <p><strong>Clique para voltar</strong> </p>
-                        </button>
-                    </div>
-                </article>
-                <section class="musicas">
-                    <p class="headTitle">Músicas <span class="tituloLegenda">MAIS OUVIDAS</span></p>
-                    <div class="carrossel">
-                        <div class="card1" onclick="music1()">
-                            <img src="./img/HTITNEC-capa.png" alt="">
-                            <div class="textsCard">
-                                <p class="tituloCard">Reflections</p>
-                                <p class="paragrafoCard">Hard To Imagine The Neighbourhood <br> Ever Changing</p>
-                            </div>
-                            <img src="./img/heart.svg" alt="">
-                        </div>
-                        <div class="card3" onclick="music2()">
-                            <img src="./img/daddyIssues (1).png" alt="">
-                            <div class="textsCard">
-                                <p class="tituloCard">Daddy Issues <span class="paragrafoCard">Remix</span></p>
-                                <p class="paragrafoCard">Daddy Issues Remix</p>
-                            </div>
-                            <img src="./img/heart.svg" alt="">
-                        </div>
-                        <div class="card2" onclick="music3()">
-                            <img src="./img/HTITNEC-capa.png" alt="">
-                            <div class="textsCard">
-                                <p class="tituloCard">Softcore</p>
-                                <p class="paragrafoCard">Hard To Imagine The Neighbourhood <br> Ever Changing</p>
-                            </div>
-                            <img src="./img/heart.svg" alt="">
-                        </div>
+                <span id="durTime">0:00</span>
+            </div>
+        </div>
 
-                        <div class="card4" onclick="music4()">
-                            <img src="./img/HTITNEC-capa.png" alt="">
-                            <div class="textsCard">
-                                <p class="tituloCard" style="line-height: 23px;">You Get Me <br> So High</p>
-                                <p class="paragrafoCard">Hard To Imagine The Neighbourhood <br> Ever Changing</p>
-                            </div>
-                            <img src="./img/heart.svg" alt="">
-                        </div>
-                    </div>
-                </section>
-                <section class="videos">
-                    <p class="headTitle">Vídeos <span class="tituloLegenda">MAIS REPRODUZIDOS</span></p>
-                    <div class="carrossel">
-                        <div class="cardV1" onclick="video1()">
-                            <img src="./img/sweaterWeather.png" alt="">
-                            <div class="actionBar">
-                                <p class="tituloCard">Sweater Weather</p>
-                                <p class="paragrafoCard">I Love You.</p>
-                                <img src="./img/heart.svg" alt="">
-                            </div>
-                        </div>
-                        <div class="cardV2" onclick="video2()">
-                            <img src="./img/daddyIssuesVideo.png" alt="">
-                            <div class="actionBar">
-                                <p class="tituloCard">Daddy Issues</p>
-                                <p class="paragrafoCard">Wiped Out!</p>
-                                <img src="./img/heart.svg" alt="">
-                            </div>
-                        </div>
-                        <div class="cardV3" onclick="video3()">
-                            <img src="./img/stargazingVideo.png" alt="">
-                            <div class="actionBar">
-                                <p class="tituloCard">Stargazing</p>
-                                <p class="paragrafoCard">Clip Chrome & <br> The Mono-Tones</p>
-                                <img src="./img/heart.svg" alt="">
-                            </div>
-                        </div>
-                        <div class="cardV4" onclick="video4()">
-                            <img src="./img//prettyBoy.png" alt="">
-                            <div class="actionBar">
-                                <p class="tituloCard">Pretty Boy</p>
-                                <p class="paragrafoCard">Clip Chrome & <br> The Mono-Tones</p>
-                                <img src="./img/heart.svg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <footer>
-                    <a href="https://github.com/TonyRodIv" target="_blank">
-                        <p class="navTitle">@TonyRodIv on GitHub</p>
-                    </a>
-                </footer>
-            </section>
-        </main>
+        <div class="player-volume">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+            <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="1" id="volSlider">
+        </div>
+        
+        <audio id="audioPlayer"></audio>
     </div>
+
+    <!-- VIDEO MODAL -->
+    <div class="modal-overlay" id="videoModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 style="color:white; font-weight: 600;" id="modalTitle">Video Player</h3>
+                <button class="close-modal" onclick="closeVideo()">×</button>
+            </div>
+            <div class="video-wrapper">
+                <iframe id="videoFrame" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
     <script src="main.js"></script>
 </body>
-
-
 </html>
